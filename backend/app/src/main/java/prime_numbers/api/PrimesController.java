@@ -3,6 +3,7 @@ package prime_numbers.api;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import prime_numbers.service.PrimesService;
  * REST controller that handles HTTP requests for prime number calculations.
  * Provides an endpoint to retrieve a list of prime numbers up to a specified limit (inclusive).
  */
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @Slf4j
 public class PrimesController {

@@ -24,8 +24,8 @@ Next.js 14.2.14 - React / frontend
 Both frontend and backend have their own Dockerfiles for building them.
 
 ## Possible improvements
-- Frontend can only call backend on localhost, this would not allow for actual deployment.
-- Spring Boot for Java 11 is out-of-support (open-source, enterprise is still going). I could try out other frameworks.
+- Frontend can only call backend on localhost (it's hardcoded), this would not allow for actual deployment.
+- Spring Boot for Java 11 is out-of-support (open-source, Enterprise is still going). I could try out other frameworks.
 - Spring Boot also allows for serving static files from /static directory, so the React frontend could be unnecessary by writing a simple html+javascript file. Although in a bigger app this would make more complicated UIs harder to write. 
 
 ## Assignment requirements

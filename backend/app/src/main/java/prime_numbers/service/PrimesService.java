@@ -1,4 +1,4 @@
-package prime_numbers;
+package prime_numbers.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
-public class PrimeService {
+public class PrimesService {
     public List<Integer> calculatePrimes(int limit) {
         log.debug("Calculating prime numbers up to {}", limit);
 

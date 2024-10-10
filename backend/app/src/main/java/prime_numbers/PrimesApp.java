@@ -7,8 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 
 @SpringBootApplication
 @Slf4j
-public class PrimeCalculatorApplication {
+public class PrimesApp {
     public static void main(String[] args) {
-        SpringApplication.run(PrimeCalculatorApplication.class, args);
+        SpringApplication.run(PrimesApp.class, args);
     }
 }

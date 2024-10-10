@@ -1,4 +1,4 @@
-package prime_numbers;
+package prime_numbers.service;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 class PrimeServiceTest {
 
-    private final PrimeService primeService = new PrimeService();
+    private final PrimesService primeService = new PrimesService();
 
     @Test
     void testCalculatePrimes() {
@@ -24,7 +24,7 @@ class PrimeServiceTest {
 
     @Test
     void testCalculatePrimesForNegativeLimit() {
-        List<Integer> primes = primeService.calculatePrimes(-5);
+        List<Integer> primes = primeService.calculatePrimes(-1);
         assertTrue(primes.isEmpty(), "There should be no primes for a negative limit");
     }
 }

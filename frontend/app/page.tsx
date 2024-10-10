@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div>
-      <h1>Prime Number Calculator</h1>
+      <h1>Primes generator</h1>
       <input
         type="number"
         value={limit}

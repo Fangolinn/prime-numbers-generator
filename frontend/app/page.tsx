@@ -8,8 +8,12 @@ function App() {
   const [primes, setPrimes] = useState([]);
 
   const fetchPrimes = async () => {
+    if (!limit) {
+      return;
+    }
+
     try {
-      const response = await axios.get(`http://localhost:8080/api/primes?limit=${limit}`);
+      const response = await axios.get(`http://localhost:8080/primes?limit=${limit}`);
       setPrimes(response.data);
     } catch (error) {
       console.error("Error fetching primes", error);

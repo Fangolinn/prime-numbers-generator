@@ -18,9 +18,10 @@ After the containers boot up go to http://localhost:3000 to access the UI.
 ## Build tools used
 
 Gradle 8.10.2 - Java / backend
+
 Next.js 14.2.14 - React / frontend
 
-All builds are performed using docker. Apart from building whole app using Docker Compose both backend and frontend can be built using Dockerfiles located in their directories.
+Both frontend and backend have their own Dockerfiles for building them.
 
 ## Possible improvements
 - Frontend can only call backend on localhost, this would not allow for actual deployment.

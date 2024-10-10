@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.extern.slf4j.Slf4j;
 import prime_numbers.service.PrimesService;
 
+/**
+ * REST controller that handles HTTP requests for prime number calculations.
+ * Provides an endpoint to retrieve a list of prime numbers up to a specified limit (inclusive).
+ */
 @RestController
 @Slf4j
 public class PrimesController {

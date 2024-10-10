@@ -1,7 +1,8 @@
 package prime_numbers.api;
 
 import static org.hamcrest.Matchers.equalTo;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,24 +18,21 @@ class PrimesControllerTest {
 	@Autowired
 	private MockMvc mvc;
 
-    @Test
-    void getPrimes() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/primes?limit=10"))
+    /**
+     * Test if the API correctly returns a list of primes up to the given limit. 
+     * 
+     * The limit is inclusive.
+     */
+    @ParameterizedTest
+    @CsvSource({
+        "-1, '[]'",
+        "1, '[]'",
+        "10, '[2,3,5,7]'",
+        "11, '[2,3,5,7,11]'" 
+    })
+    void getPrimes(int limit, String expectedResponse) throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/primes?limit=" + limit))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("[2,3,5,7]")));
-    }
-
-    @Test
-    void getPrimesForLowLimit() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/primes?limit=1"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("[]")));
-    }
-
-    @Test
-    void getPrimesForNegativeLimit() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/primes?limit=-1"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("[]")));
+                .andExpect(content().string(equalTo(expectedResponse)));
     }
 }

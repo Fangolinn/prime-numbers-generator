@@ -7,6 +7,10 @@ import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Service class for calculating prime numbers up to a given limit (inclusive).
+ * Utilizes the Sieve of Eratosthenes algorithm to find all prime numbers up to the specified limit.
+ */
 @Service
 @Slf4j
 public class PrimesService {

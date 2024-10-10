@@ -35,9 +35,9 @@ The application must contain a web page with a user interface that will allow en
 
 The solution should be delivered in the form of link to the project on your GitHub, or a zip archive containing: 
 
-    • The source code 
-    • Short instruction on how to run the application 
-    • Details of the type and version of build tools (if used). 
+• The source code 
+• Short instruction on how to run the application 
+• Details of the type and version of build tools (if used). 
 
 Other information: 
     • Use Java 11 
